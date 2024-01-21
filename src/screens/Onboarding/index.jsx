@@ -65,7 +65,7 @@ export const Onboarding = () => {
       </View>
       <View style={styles.dotContainer}>
         {data.map((item, index) => {
-          return <View style={[styles.dotIndicator, {}]} />;
+          return <View style={[styles.dotIndicator, {}]} key={item.id} />;
         })}
       </View>
       <TouchableOpacity

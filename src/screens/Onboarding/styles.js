@@ -79,7 +79,7 @@ export const styles = StyleSheet.create({
     justifyContent: "flex-start",
   },
   btn: {
-    height: scale.heightPixel(50),
+    height: scale.heightPixel(56),
     width: "80%",
     backgroundColor: theme.black,
     alignSelf: "center",
@@ -90,7 +90,7 @@ export const styles = StyleSheet.create({
   googleImageCon: {
     alignSelf: "center",
     backgroundColor: theme.white,
-    padding: scale.fontPixel(5),
+    padding: scale.fontPixel(7),
     borderRadius: 100 / 2,
     marginLeft: scale.pixelSizeHorizontal(8),
   },

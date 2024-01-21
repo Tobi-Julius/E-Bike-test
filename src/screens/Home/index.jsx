@@ -1,19 +1,58 @@
-import { View, Text } from "react-native";
-import React from "react";
+import { ScrollView, View } from "react-native";
+import React, { useState } from "react";
 import { styles } from "./styles";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { Image } from "expo-image";
+import { user, noti } from "../../constants/images";
+import { theme } from "../../constants";
+import { Text } from "../../components/common";
+import { MainScreen } from "./MainScreen";
+import { ViewOrder } from "./ViewOrder";
 
 export const Home = () => {
+  const [orderView, updateOrderView] = useState(false);
   return (
-    <SafeAreaView>
-      <View style={styles.headercontainer}>
-        <View style={styles.userImageCon}>
-          <Image />
+    <>
+      <SafeAreaView
+        style={{
+          backgroundColor: theme.white,
+        }}
+      >
+        <View style={styles.headercontainer}>
+          <View style={styles.userImageCon}>
+            <Image
+              source={user}
+              contentFit="cover"
+              cachePolicy={"memory-disk"}
+              style={styles.userImage}
+            />
+          </View>
+          <View style={styles.notiIconCon}>
+            <Image
+              source={noti}
+              contentFit="contain"
+              cachePolicy={"memory-disk"}
+              style={styles.notiImage}
+            />
+          </View>
         </View>
-        <View style={styles.notiIconCon}>
-          <Image />
+      </SafeAreaView>
+
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        style={{
+          backgroundColor: theme.white,
+        }}
+      >
+        <View style={styles.greetingsContainer}>
+          <Text text={"Hello good Morning!"} textStyle={styles.greetings} />
         </View>
-      </View>
-    </SafeAreaView>
+        {orderView ? (
+          <ViewOrder />
+        ) : (
+          <MainScreen orderView={orderView} updateOrderView={updateOrderView} />
+        )}
+      </ScrollView>
+    </>
   );
 };

@@ -5,3 +5,5 @@ export const truck = require("../assets/Images/truck.png");
 export const packag = require("../assets/Images/package.png");
 export const postal = require("../assets/Images/postal.png");
 export const google = require("../assets/Images/icon-google.png");
+export const noti = require("../assets/Images/noti.png");
+export const location = require("../assets/Images/location.png");
