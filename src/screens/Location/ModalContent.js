@@ -5,7 +5,6 @@ import { Text } from "../../components/common";
 import { Entypo } from "@expo/vector-icons";
 import { scale } from "../../utils";
 import { Image } from "expo-image";
-import { truck } from "../../constants/images";
 import { data } from "./historyData";
 import { theme } from "../../constants";
 
@@ -62,11 +61,11 @@ export const ModalContent = () => {
                 />
               </TouchableOpacity>
               <View style={styles.textContainer}>
-                <Text text={item.title} />
-                <Text text={item.location} />
+                <Text text={item.title} textStyle={styles.text} />
+                <Text text={item.location}  textStyle={styles.location}/>
               </View>
             </View>
-            <Text text={item.time} />
+            <Text text={item.time} textStyle={styles.time}/>
           </View>
           {data.length === _index + 1 ? null : (
             <View style={styles.lineContainer}>

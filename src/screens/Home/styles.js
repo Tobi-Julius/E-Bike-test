@@ -178,4 +178,19 @@ export const styles = StyleSheet.create({
   textContainer: {
     marginLeft: scale.pixelSizeHorizontal(18),
   },
+  text: {
+    fontSize: scale.size.h6ƒ,
+    color: theme.black,
+    fontFamily: "Inter_600SemiBold",
+  },
+  time: {
+    color: "#7A809D",
+    fontFamily: "Inter_400Regular",
+    marginRight: scale.pixelSizeHorizontal(12),
+  },
+  location: {
+    color: "#7A809D",
+    fontFamily: "Inter_400Regular",
+    marginRight: scale.pixelSizeHorizontal(12),
+  },
 });
