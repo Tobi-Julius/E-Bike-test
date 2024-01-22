@@ -3,8 +3,9 @@ import {
   FlatList,
   TouchableOpacity,
   Text as BaseText,
+  Animated,
 } from "react-native";
-import React, { useRef, useState } from "react";
+import React, { useCallback, useRef, useState } from "react";
 import { styles } from "./styles";
 import { Image } from "expo-image";
 import { google, onboard, line1 } from "../../constants/images";
@@ -19,7 +20,7 @@ export const Onboarding = () => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const ref = useRef();
+  const ref = useRef(new Animated.Value(0));
 
   const updateCurrentSlideIndex = (e) => {
     const contentOffsetX = e.nativeEvent.contentOffset.x;
@@ -27,7 +28,7 @@ export const Onboarding = () => {
     setCurrentIndex(currentIndex);
   };
 
-  const RenderItems = ({ item, index }) => {
+  const RenderItems = useCallback(({ item, index }) => {
     return (
       <View>
         <View style={styles.imageContainer}>
@@ -54,13 +55,14 @@ export const Onboarding = () => {
         </View>
       </View>
     );
-  };
+  }, []);
 
   return (
     <View style={styles.container}>
       <View style={styles.linesContainer}>
         {[1, 2, 3].map((item, index) => (
           <Image
+            key={item}
             source={line1}
             style={{
               position: "absolute",
@@ -80,7 +82,7 @@ export const Onboarding = () => {
       </View>
 
       <View>
-        <FlatList
+        <Animated.FlatList
           ref={ref}
           data={data}
           renderItem={({ item, index }) => (

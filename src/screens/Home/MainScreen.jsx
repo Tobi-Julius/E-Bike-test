@@ -1,5 +1,5 @@
 import { View, FlatList, TouchableOpacity } from "react-native";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useMemo, useCallback } from "react";
 import { data } from "./homeData";
 import { Image } from "expo-image";
 import { styles } from "./styles";
@@ -10,7 +10,7 @@ import { Text } from "../../components/common";
 import { biker } from "../../constants/gifs";
 
 export const MainScreen = ({ updateOrderView, orderView }) => {
-  const RenderItems = ({ item, index }) => {
+  const RenderItems = useCallback(({ item, index }) => {
     return (
       <View
         style={[
@@ -29,7 +29,7 @@ export const MainScreen = ({ updateOrderView, orderView }) => {
         />
       </View>
     );
-  };
+  }, []);
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -44,12 +44,12 @@ export const MainScreen = ({ updateOrderView, orderView }) => {
   return (
     <View style={styles.MainScreenCon}>
       <FlatList
+        keyExtractor={(item) => item.id}
         snapToInterval={scale.widthPixel(255)}
         ref={ref}
         horizontal
         showsHorizontalScrollIndicator={false}
         data={data}
-        p
         renderItem={({ item, index }) => (
           <RenderItems item={item} index={index} />
         )}
@@ -65,6 +65,7 @@ export const MainScreen = ({ updateOrderView, orderView }) => {
         {data.map((item, index) => {
           return (
             <View
+              key={item.id}
               style={[
                 styles.dotIndicator,
                 currentIndex === index && {
@@ -107,7 +108,7 @@ export const MainScreen = ({ updateOrderView, orderView }) => {
           <Image
             source={biker}
             style={styles.bikerGif}
-            cachePolicy={"memory-disk"}
+            cachePolicy={"memory"}
             contentFit="cover"
           />
         </View>
