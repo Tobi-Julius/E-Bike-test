@@ -11,6 +11,7 @@ import { ViewOrder } from "./ViewOrder";
 
 export const Home = () => {
   const [orderView, updateOrderView] = useState(false);
+
   return (
     <>
       <SafeAreaView

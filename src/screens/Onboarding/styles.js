@@ -13,6 +13,17 @@ export const styles = StyleSheet.create({
     borderRadius: "50%",
     position: "absolute",
   },
+  linesContainer: {
+    position: "absolute",
+    top: -4,
+    right: -5,
+    width: scale.widthPixel(160),
+    height: scale.heightPixel(180),
+  },
+  lines: {
+    width: "100%",
+    height: "100%",
+  },
   circle: {
     backgroundColor: "#FFCE23",
     height: "100%",
@@ -56,7 +67,7 @@ export const styles = StyleSheet.create({
     marginTop: scale.pixelSizeVertical(23),
   },
   dotIndicator: {
-    backgroundColor: theme.black,
+    backgroundColor: theme.white,
     height: scale.heightPixel(5),
     width: scale.widthPixel(5),
     marginLeft: scale.pixelSizeHorizontal(8),

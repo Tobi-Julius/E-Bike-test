@@ -19,7 +19,6 @@ import BottomSheet, {
 } from "@gorhom/bottom-sheet";
 import { useNavigation } from "@react-navigation/native";
 import { ModalContent } from "./ModalContent";
-import { theme } from "../../constants";
 
 export const Location = () => {
   const { goBack } = useNavigation();
@@ -27,7 +26,7 @@ export const Location = () => {
   const bottomSheetModalRef = useRef(null);
 
   // variables
-  const snapPoints = useMemo(() => ["15%", "85%"], []);
+  const snapPoints = useMemo(() => ["13%", "85%"], []);
 
   const [index, setIndex] = useState(0);
 
@@ -109,7 +108,7 @@ export const Location = () => {
           marginVertical: scale.pixelSizeVertical(7),
         }}
       >
-        <BottomSheetScrollView>
+        <BottomSheetScrollView showsVerticalScrollIndicator={false}>
           <ModalContent />
         </BottomSheetScrollView>
       </BottomSheet>

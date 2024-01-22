@@ -4,16 +4,28 @@ import {
   TouchableOpacity,
   Text as BaseText,
 } from "react-native";
-import React from "react";
+import React, { useRef, useState } from "react";
 import { styles } from "./styles";
 import { Image } from "expo-image";
-import { google, onboard } from "../../constants/images";
+import { google, onboard, line1 } from "../../constants/images";
 import { data } from "./onboardData";
 import { Text } from "../../components/common";
 import { useNavigation } from "@react-navigation/native";
+import { scale } from "../../utils";
+import { theme } from "../../constants";
 
 export const Onboarding = () => {
   const { navigate } = useNavigation();
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const ref = useRef();
+
+  const updateCurrentSlideIndex = (e) => {
+    const contentOffsetX = e.nativeEvent.contentOffset.x;
+    const currentIndex = Math.round(contentOffsetX / scale.width);
+    setCurrentIndex(currentIndex);
+  };
 
   const RenderItems = ({ item, index }) => {
     return (
@@ -46,12 +58,30 @@ export const Onboarding = () => {
 
   return (
     <View style={styles.container}>
+      <View style={styles.linesContainer}>
+        {[1, 2, 3].map((item, index) => (
+          <Image
+            source={line1}
+            style={{
+              position: "absolute",
+              top: item === 1 ? -10 : item === 2 ? -13 : -16,
+              right: item === 1 ? -10 : item === 2 ? -30 : -33,
+              width: scale.widthPixel(
+                item === 1 ? 180 : item === 2 ? 170 : 150
+              ),
+              height: scale.heightPixel(180),
+            }}
+            cachePolicy={"memory-disk"}
+          />
+        ))}
+      </View>
       <View style={styles.innerCircle}>
         <View style={styles.circle} />
       </View>
 
       <View>
         <FlatList
+          ref={ref}
           data={data}
           renderItem={({ item, index }) => (
             <RenderItems item={item} index={index} />
@@ -61,11 +91,25 @@ export const Onboarding = () => {
           pagingEnabled
           snapToAlignment="center"
           contentContainerStyle={{}}
+          onMomentumScrollEnd={updateCurrentSlideIndex}
         />
       </View>
       <View style={styles.dotContainer}>
         {data.map((item, index) => {
-          return <View style={[styles.dotIndicator, {}]} key={item.id} />;
+          return (
+            <View
+              style={[
+                styles.dotIndicator,
+                currentIndex === index && {
+                  height: scale.heightPixel(5),
+                  width: scale.widthPixel(5),
+                  marginLeft: scale.pixelSizeHorizontal(8),
+                  backgroundColor: theme.black,
+                },
+              ]}
+              key={item.id}
+            />
+          );
         })}
       </View>
       <TouchableOpacity

@@ -16,7 +16,7 @@ export const ModalContent = () => {
       <View style={styles.topContainer}>
         <View>
           <Text text={"Estimate arrives in"} textStyle={styles.arrive} />
-          <Text text={"2h 40m"} textStyle={styles.time} />
+          <Text text={"2h 40m"} textStyle={styles.date} />
         </View>
         <Entypo
           name="dots-two-horizontal"

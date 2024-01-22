@@ -17,7 +17,7 @@ export const Text = ({
       allowFontScaling={true}
       numberOfLines={numberOfLines}
       ellipsizeMode={ellipsizeMode}
-      style={[color, textStyle]}
+      style={[color, textStyle, { letterSpacing: 0.5 }]}
       onPress={onPress}
       {...others}
     >

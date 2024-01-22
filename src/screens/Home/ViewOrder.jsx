@@ -8,12 +8,20 @@ import { Fontisto, Ionicons } from "@expo/vector-icons";
 import { trackData } from "./trackData";
 import { Image } from "expo-image";
 import { useNavigation } from "@react-navigation/native";
+import { lines } from "../../constants/images";
 
 export const ViewOrder = ({ updateOrderView, orderView }) => {
   const { navigate } = useNavigation();
   return (
     <View style={styles.vieworderCon}>
       <View style={styles.cardCon}>
+        <View style={styles.linesContainer}>
+          <Image
+            source={lines}
+            style={styles.lines}
+            cachePolicy={"memory-disk"}
+          />
+        </View>
         <Text text={"Track Your Package"} textStyle={styles.title} />
         <Text
           textStyle={styles.firstText}

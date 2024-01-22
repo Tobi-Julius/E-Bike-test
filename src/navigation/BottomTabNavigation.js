@@ -6,6 +6,8 @@ import { Feather, Ionicons, FontAwesome } from "@expo/vector-icons";
 import { scale } from "../utils";
 import { View } from "react-native";
 import { useTheme } from "react-native-paper";
+import { Image } from "expo-image";
+import { home1, home2 } from "../constants/images";
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -39,11 +41,19 @@ export const BottomTabNavigation = () => {
                 height: "100%",
               }}
             >
-              <Ionicons
+              <Image
+                source={focused ? home2 : home1}
+                style={{
+                  width: 24,
+                  height: 24,
+                }}
+                cachePolicy={"memory-disk"}
+              />
+              {/* <Ionicons
                 name={focused ? "home" : "home-outline"}
                 size={scale.fontPixel(24)}
                 color={color}
-              />
+              /> */}
             </View>
           ),
         }}
@@ -62,7 +72,7 @@ export const BottomTabNavigation = () => {
             >
               <Ionicons
                 name={focused ? "bookmark" : "bookmark-outline"}
-                size={scale.fontPixel(24)}
+                size={scale.fontPixel(22)}
                 color={color}
               />
             </View>
@@ -84,13 +94,13 @@ export const BottomTabNavigation = () => {
               {focused ? (
                 <FontAwesome
                   name={"send"}
-                  size={scale.fontPixel(22)}
+                  size={scale.fontPixel(20)}
                   color={color.black}
                 />
               ) : (
                 <Feather
                   name={"send"}
-                  size={scale.fontPixel(24)}
+                  size={scale.fontPixel(20)}
                   color={color.icon}
                 />
               )}
@@ -112,7 +122,7 @@ export const BottomTabNavigation = () => {
             >
               <Ionicons
                 name={focused ? "settings" : "settings-outline"}
-                size={scale.fontPixel(24)}
+                size={scale.fontPixel(22)}
                 color={color}
               />
             </View>

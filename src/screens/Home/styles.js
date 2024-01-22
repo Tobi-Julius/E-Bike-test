@@ -56,7 +56,7 @@ export const styles = StyleSheet.create({
     marginTop: scale.pixelSizeVertical(23),
   },
   dotIndicator: {
-    backgroundColor: theme.black,
+    backgroundColor: theme.gray,
     height: scale.heightPixel(5),
     width: scale.widthPixel(5),
     marginLeft: scale.pixelSizeHorizontal(8),
@@ -124,7 +124,7 @@ export const styles = StyleSheet.create({
     fontSize: scale.size.h3,
     color: theme.black,
     fontFamily: "Inter_600SemiBold",
-    marginTop: scale.pixelSizeVertical(53),
+    marginTop: scale.pixelSizeVertical(43),
     marginBottom: scale.pixelSizeVertical(5),
   },
   btnTrack: {
@@ -147,7 +147,6 @@ export const styles = StyleSheet.create({
     borderRadius: 100 / 2,
     alignItems: "center",
     justifyContent: "center",
-    // marginTop: scale.pixelSizeVertical(24),
   },
   trackImage: {
     height: "50%",
@@ -173,24 +172,20 @@ export const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     height: scale.heightPixel(56),
-    marginTop: scale.pixelSizeVertical(24),
+    marginTop: scale.pixelSizeVertical(30),
   },
   textContainer: {
     marginLeft: scale.pixelSizeHorizontal(18),
   },
-  text: {
-    fontSize: scale.size.h6ƒ,
-    color: theme.black,
-    fontFamily: "Inter_600SemiBold",
+  linesContainer: {
+    position: "absolute",
+    top: -4,
+    right: -5,
+    width: scale.widthPixel(150),
+    height: scale.heightPixel(170),
   },
-  time: {
-    color: "#7A809D",
-    fontFamily: "Inter_400Regular",
-    marginRight: scale.pixelSizeHorizontal(12),
-  },
-  location: {
-    color: "#7A809D",
-    fontFamily: "Inter_400Regular",
-    marginRight: scale.pixelSizeHorizontal(12),
+  lines: {
+    width: "100%",
+    height: "100%",
   },
 });

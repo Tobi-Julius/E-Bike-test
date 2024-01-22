@@ -16,6 +16,7 @@ export const styles = StyleSheet.create({
     fontSize: scale.size.h3,
     fontFamily: "Inter_600SemiBold",
     color: theme.black,
+    letterSpacing: 0.5,
   },
   headerContainer: {
     flexDirection: "row",
@@ -56,12 +57,13 @@ export const styles = StyleSheet.create({
     fontFamily: "Inter_500Medium",
     color: "#7A809D",
     marginTop: scale.pixelSizeVertical(5),
+    letterSpacing: 0.5,
   },
-  time: {
-    fontSize: scale.size.h1,
+  date: {
+    fontSize: scale.size.h3,
     fontFamily: "Inter_600SemiBold",
     color: theme.black,
-    marginTop: scale.pixelSizeVertical(5),
+    letterSpacing: 0.5,
   },
   topContainer: {
     flexDirection: "row",
@@ -91,11 +93,11 @@ export const styles = StyleSheet.create({
   address: {
     fontSize: scale.fontPixel(12),
     fontFamily: "Inter_400Regular",
-    color: "#7A809D",
+    color: "#96823D",
     marginTop: scale.pixelSizeVertical(5),
   },
   separation: {
-    borderTopColor: "#7A809D",
+    borderTopColor: "#96823D",
     borderTopWidth: scale.fontPixel(1),
     marginVertical: scale.pixelSizeVertical(12),
   },
@@ -139,5 +141,22 @@ export const styles = StyleSheet.create({
     height: scale.heightPixel(35),
     borderColor: "#DFE6ED",
     alignSelf: "center",
+  },
+
+  text: {
+    fontSize: scale.size.h6ƒ,
+    color: theme.black,
+    fontFamily: "Inter_600SemiBold",
+  },
+  time: {
+    color: "#7A809D",
+    fontFamily: "Inter_400Regular",
+    marginRight: scale.pixelSizeHorizontal(12),
+  },
+  location: {
+    color: "#7A809D",
+    fontFamily: "Inter_400Regular",
+    marginRight: scale.pixelSizeHorizontal(12),
+    marginTop: scale.pixelSizeVertical(5),
   },
 });

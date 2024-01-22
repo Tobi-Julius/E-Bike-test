@@ -2,7 +2,7 @@ import { Dimensions, PixelRatio } from "react-native";
 
 const { width, height } = Dimensions.get("screen");
 
-// base dimensions for apple iphone 14 pro  w: 393, h: 852
+// base dimensions for apple iphone 11 pro/x/xs  w: 315, h: 812
 
 const designHeight = 812;
 const designWidth = 375;
