@@ -1,4 +1,4 @@
-import { View, ImageBackground } from "react-native";
+import { View } from "react-native";
 import React, {
   useCallback,
   useMemo,
@@ -13,12 +13,10 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
 import { scale } from "../../utils";
 import { Text } from "../../components/common";
-import BottomSheet, {
-  BottomSheetScrollView,
-  BottomSheetBackdrop,
-} from "@gorhom/bottom-sheet";
+import BottomSheet from "@gorhom/bottom-sheet";
 import { useNavigation } from "@react-navigation/native";
 import { ModalContent } from "./ModalContent";
+import { Image } from "expo-image";
 
 export const Location = () => {
   const { goBack } = useNavigation();
@@ -68,16 +66,14 @@ export const Location = () => {
   );
 
   return (
-    <ImageBackground source={location} style={styles.imageBackground}>
+    <View style={{ flex: 1 }}>
+      <Image source={location} style={styles.imageBackground} />
       <SafeAreaView style={styles.headerContainer}>
         <Ionicons
           name="chevron-back"
           color={"#3B4A66"}
           size={scale.fontPixel(23)}
           onPress={() => goBack()}
-          style={{
-            zIndex: 1000,
-          }}
         />
         <Text text={"Tracking Details"} textStyle={styles.topText} />
         <View />
@@ -89,8 +85,8 @@ export const Location = () => {
         </View>
       </View>
       <BottomSheet
-        enabledBottomClamp={false}
-        enableDismissOnClose={false}
+        // enabledBottomClamp={false}
+        // enableDismissOnClose={false}
         ref={bottomSheetModalRef}
         index={0}
         snapPoints={snapPoints}
@@ -101,15 +97,6 @@ export const Location = () => {
         enableHandlePanningGesture={true}
         enableContentPanningGesture={false}
         backdropComponent={() => renderBackdrop()}
-        handleStyle={
-          {
-            // backgroundColor: "red",
-            // borderRadius: 100,
-          }
-        }
-        backgroundStyle={{
-          borderRadius: scale.fontPixel(32),
-        }}
         handleIndicatorStyle={{
           backgroundColor: "#DBE2E9",
           paddingVertical: scale.pixelSizeHorizontal(3),
@@ -117,10 +104,8 @@ export const Location = () => {
           marginVertical: scale.pixelSizeVertical(7),
         }}
       >
-        <BottomSheetScrollView showsVerticalScrollIndicator={false}>
-          <ModalContent />
-        </BottomSheetScrollView>
+        <ModalContent />
       </BottomSheet>
-    </ImageBackground>
+    </View>
   );
 };

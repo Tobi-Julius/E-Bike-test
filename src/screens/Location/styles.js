@@ -4,7 +4,7 @@ import { theme } from "../../constants";
 
 export const styles = StyleSheet.create({
   imageBackground: {
-    height: "100",
+    height: "100%",
     width: scale.width,
     position: "absolute",
     top: 0,
