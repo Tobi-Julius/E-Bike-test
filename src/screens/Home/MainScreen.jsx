@@ -84,6 +84,7 @@ export const MainScreen = ({ updateOrderView, orderView }) => {
           text={"Gotten your \nE-Bike yet?"}
           ellipsizeMode={"tail"}
           numberOfLines={2}
+          textStyle={styles.gotten}
         />
         <TouchableOpacity
           activeOpacity={0.9}
@@ -100,6 +101,7 @@ export const MainScreen = ({ updateOrderView, orderView }) => {
             name="arrow-right-l"
             size={scale.fontPixel(12)}
             color={theme.white}
+            style={{ marginLeft: scale.pixelSizeHorizontal(17) }}
           />
         </TouchableOpacity>
       </View>

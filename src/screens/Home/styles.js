@@ -76,20 +76,21 @@ export const styles = StyleSheet.create({
     alignItems: "center",
   },
   firstText: {
-    fontSize: scale.size.h6,
+    fontSize: scale.size.h5,
     color: theme.black,
     fontFamily: "Inter_400Regular",
+    letterSpacing: 1,
   },
   btnText: {
-    fontSize: scale.size.h6,
+    fontSize: scale.size.h5,
     color: theme.white,
     fontFamily: "Inter_400Regular",
-    marginRight: scale.pixelSizeHorizontal(12),
+    letterSpacing: 1,
   },
   btn: {
     backgroundColor: theme.black,
-    paddingHorizontal: scale.pixelSizeHorizontal(20),
-    height: scale.heightPixel(46),
+    paddingHorizontal: scale.pixelSizeHorizontal(25),
+    height: scale.heightPixel(56),
     flexDirection: "row",
     borderRadius: scale.fontPixel(52),
     alignItems: "center",
@@ -116,8 +117,8 @@ export const styles = StyleSheet.create({
     paddingHorizontal: scale.pixelSizeHorizontal(24),
     width: "100%",
     backgroundColor: "#FFD337",
-    paddingTop: scale.pixelSizeVertical(15),
-    paddingBottom: scale.pixelSizeVertical(20),
+    paddingTop: scale.pixelSizeVertical(5),
+    paddingBottom: scale.pixelSizeVertical(30),
     borderRadius: scale.fontPixel(32),
   },
   title: {
@@ -138,7 +139,8 @@ export const styles = StyleSheet.create({
     height: scale.heightPixel(55),
   },
   trackContainer: {
-    marginTop: scale.pixelSizeVertical(25),
+    marginTop: scale.pixelSizeVertical(35),
+    // marginBottom: scale.pixelSizeVertical(),
   },
   trackImageContainer: {
     height: scale.heightPixel(56),
@@ -187,5 +189,18 @@ export const styles = StyleSheet.create({
   lines: {
     width: "100%",
     height: "100%",
+  },
+  gotten: {
+    fontSize: scale.size.h5,
+    color: theme.black,
+    fontFamily: "Inter_400Regular",
+    textAlign: "center",
+    letterSpacing: 1,
+  },
+  track: {
+    fontSize: scale.size.h4,
+    color: theme.black,
+    fontFamily: "Inter_600SemiBold",
+    letterSpacing: 1,
   },
 });

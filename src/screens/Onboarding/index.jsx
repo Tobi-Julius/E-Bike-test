@@ -103,9 +103,8 @@ export const Onboarding = () => {
               style={[
                 styles.dotIndicator,
                 currentIndex === index && {
-                  height: scale.heightPixel(5),
-                  width: scale.widthPixel(5),
-                  marginLeft: scale.pixelSizeHorizontal(8),
+                  height: scale.heightPixel(7),
+                  width: scale.widthPixel(7),
                   backgroundColor: theme.black,
                 },
               ]}
@@ -132,7 +131,7 @@ export const Onboarding = () => {
       </TouchableOpacity>
 
       <BaseText style={styles.signUpBaseText}>
-        Don’t have any account?{" "}
+        Don’t have any account?{"  "}
         <Text text={"Sign up"} style={styles.signUpText} />
       </BaseText>
     </View>

@@ -39,6 +39,10 @@ export const ViewOrder = ({ updateOrderView, orderView }) => {
             borderRadius: scale.fontPixel(52),
             paddingLeft: scale.pixelSizeHorizontal(24),
             marginTop: scale.pixelSizeVertical(29),
+            fontSize: scale.size.h5,
+            color: theme.black,
+            fontFamily: "Inter_400Regular",
+            letterSpacing: 1,
           }}
         />
         <TouchableOpacity
@@ -60,7 +64,7 @@ export const ViewOrder = ({ updateOrderView, orderView }) => {
         </TouchableOpacity>
       </View>
       <View style={styles.trackContainer}>
-        <Text text={"Tracking history"} />
+        <Text text={"Tracking history"} textStyle={styles.track} />
         {trackData.map((item, index) => (
           <View key={item.id} style={styles.mainTrackContainer}>
             <View style={styles.imageStatusContainer}>

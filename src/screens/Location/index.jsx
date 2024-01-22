@@ -101,6 +101,15 @@ export const Location = () => {
         enableHandlePanningGesture={true}
         enableContentPanningGesture={false}
         backdropComponent={() => renderBackdrop()}
+        handleStyle={
+          {
+            // backgroundColor: "red",
+            // borderRadius: 100,
+          }
+        }
+        backgroundStyle={{
+          borderRadius: scale.fontPixel(32),
+        }}
         handleIndicatorStyle={{
           backgroundColor: "#DBE2E9",
           paddingVertical: scale.pixelSizeHorizontal(3),
