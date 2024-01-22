@@ -4,7 +4,7 @@ import { theme } from "../../constants";
 
 export const styles = StyleSheet.create({
   imageBackground: {
-    height: scale.height,
+    height: "100",
     width: scale.width,
     position: "absolute",
     top: 0,
@@ -34,7 +34,7 @@ export const styles = StyleSheet.create({
     marginHorizontal: scale.pixelSizeHorizontal(24),
     alignItems: "center",
     justifyContent: "center",
-    marginTop: scale.pixelSizeVertical(Platform.OS === "android" ? 29 : 5),
+    marginTop: scale.pixelSizeVertical(Platform.OS === "android" ? 59 : 5),
   },
   inner: {
     backgroundColor: theme.primary,

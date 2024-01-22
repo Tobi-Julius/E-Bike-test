@@ -1,4 +1,4 @@
-import { View } from "react-native";
+import { View, ImageBackground } from "react-native";
 import React, {
   useCallback,
   useMemo,
@@ -6,7 +6,7 @@ import React, {
   useEffect,
   useState,
 } from "react";
-import { Image } from "expo-image";
+import {} from "expo-image";
 import { styles } from "./styles";
 import { location } from "../../constants/images";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -53,23 +53,22 @@ export const Location = () => {
 
   const renderBackdrop = useCallback(
     (props) => (
-      <BottomSheetBackdrop
-        {...props}
-        disappearsOnIndex={0}
-        appearsOnIndex={1}
-        opacity={0.8}
-        animatedPosition={0}
-        animatedIndex={index}
-        pressBehavior={index === 1 ? "collapse" : "close"}
-        // onPress={()=>{}}
-      />
+      <View />
+      // <BottomSheetBackdrop
+      //   {...props}
+      //   disappearsOnIndex={0}
+      //   appearsOnIndex={1}
+      //   animatedPosition={0}
+      //   animatedIndex={index}
+      //   pressBehavior={index === 1 ? "collapse" : "close"}
+      //   // onPress={()=>{}}
+      // />
     ),
     [index]
   );
 
   return (
-    <View style={{ flex: 1 }}>
-      <Image source={location} style={styles.imageBackground} />
+    <ImageBackground source={location} style={styles.imageBackground}>
       <SafeAreaView style={styles.headerContainer}>
         <Ionicons
           name="chevron-back"
@@ -83,6 +82,7 @@ export const Location = () => {
         <Text text={"Tracking Details"} textStyle={styles.topText} />
         <View />
       </SafeAreaView>
+
       <View style={styles.outter}>
         <View style={styles.inner}>
           <Text text={"SCP6653728497"} textStyle={styles.id} />
@@ -112,6 +112,6 @@ export const Location = () => {
           <ModalContent />
         </BottomSheetScrollView>
       </BottomSheet>
-    </View>
+    </ImageBackground>
   );
 };

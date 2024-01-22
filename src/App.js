@@ -1,5 +1,4 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
 import NavigationContainer from "./navigation/NavigationContainer";
 import { useFont } from "./customHooks/useFont";
 import { BottomSheetModalProvider } from "@gorhom/bottom-sheet";
@@ -10,17 +9,9 @@ export default function App() {
   return (
     isFontReady && (
       <BottomSheetModalProvider>
+        <StatusBar style="dark" />
         <NavigationContainer />
       </BottomSheetModalProvider>
     )
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});

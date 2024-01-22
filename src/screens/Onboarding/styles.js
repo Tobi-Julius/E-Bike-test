@@ -68,7 +68,7 @@ export const styles = StyleSheet.create({
   },
   dotIndicator: {
     backgroundColor: theme.white,
-    height: scale.heightPixel(5),
+    height: scale.heightPixel(3),
     width: scale.widthPixel(5),
     marginLeft: scale.pixelSizeHorizontal(8),
     borderRadius: 100 / 2,

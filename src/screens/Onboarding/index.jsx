@@ -30,7 +30,7 @@ export const Onboarding = () => {
 
   const RenderItems = useCallback(({ item, index }) => {
     return (
-      <View>
+      <View style={{ flex: 1 }}>
         <View style={styles.imageContainer}>
           <Image
             source={onboard}
