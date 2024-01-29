@@ -17,6 +17,7 @@ import BottomSheet from "@gorhom/bottom-sheet";
 import { useNavigation } from "@react-navigation/native";
 import { ModalContent } from "./ModalContent";
 import { Image } from "expo-image";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 export const Location = () => {
   const { goBack } = useNavigation();
@@ -24,7 +25,7 @@ export const Location = () => {
   const bottomSheetModalRef = useRef(null);
 
   // variables
-  const snapPoints = useMemo(() => ["13%", "85%"], []);
+  const snapPoints = useMemo(() => ["12.5%", "85%"], []);
 
   const [index, setIndex] = useState(0);
 
@@ -66,7 +67,11 @@ export const Location = () => {
   );
 
   return (
-    <View style={{ flex: 1 }}>
+    <GestureHandlerRootView
+      style={{
+        flex: 1,
+      }}
+    >
       <Image source={location} style={styles.imageBackground} />
       <SafeAreaView style={styles.headerContainer}>
         <Ionicons
@@ -84,28 +89,11 @@ export const Location = () => {
           <Text text={"SCP6653728497"} textStyle={styles.id} />
         </View>
       </View>
-      <BottomSheet
-        // enabledBottomClamp={false}
-        // enableDismissOnClose={false}
-        ref={bottomSheetModalRef}
-        index={0}
+      <ModalContent
         snapPoints={snapPoints}
-        onChange={handleSheetChanges}
-        enablePanDownToClose={true}
-        onDismiss={() => handlePresentModalPress()}
-        enabledGestureInteraction={true}
-        enableHandlePanningGesture={true}
-        enableContentPanningGesture={false}
-        backdropComponent={() => renderBackdrop()}
-        handleIndicatorStyle={{
-          backgroundColor: "#DBE2E9",
-          paddingVertical: scale.pixelSizeHorizontal(3),
-          paddingHorizontal: scale.pixelSizeHorizontal(22),
-          marginVertical: scale.pixelSizeVertical(7),
-        }}
-      >
-        <ModalContent />
-      </BottomSheet>
-    </View>
+        bottomSheetRef={bottomSheetModalRef}
+        handleSheetChanges={handleSheetChanges}
+      />
+    </GestureHandlerRootView>
   );
 };

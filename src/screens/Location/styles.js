@@ -71,8 +71,10 @@ export const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   modalContainer: {
-    paddingHorizontal: scale.pixelSizeHorizontal(24),
-    paddingBottom: scale.heightPixel(16),
+    backgroundColor: theme.lightPrimary,
+    height: "100%",
+    paddingVertical: scale.pixelSizeVertical(10),
+    paddingHorizontal: scale.pixelSizeHorizontal(16),
   },
   cardContainer: {
     width: "100%",
